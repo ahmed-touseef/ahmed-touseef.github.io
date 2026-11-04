@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Touseef Ahmed</title>
+<meta name="description" content="Touseef Ahmed, AI engineer in Milan. I build AI systems and make them work inside real company infrastructure.">
+<link rel="canonical" href="https://www.touseefahmed.com/">
+<meta property="og:title" content="Touseef Ahmed">
+<meta property="og:description" content="AI engineer in Milan. I build AI systems and make them work inside real company infrastructure.">
+<meta property="og:url" content="https://www.touseefahmed.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2314233A'/%3E%3Crect x='6' y='8' width='20' height='3' fill='%23E3B23C'/%3E%3Crect x='6' y='14' width='16' height='3' fill='%23F2F3EF'/%3E%3Crect x='6' y='20' width='12' height='3' fill='%23F2F3EF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F3EF;
+    --ink: #14233A;
+    --ink-soft: #4A586B;
+    --rule: #CDD2D6;
+    --signal: #E3B23C;
+    --l1: #14233A;
+    --l2: #2B4466;
+    --l3: #4D6A8F;
+    --l4: #7F97B3;
+    --l5: #AEBDCD;
+    --focus: #2B4466;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #101B2B;
+      --ink: #E9ECEE;
+      --ink-soft: #A3AFBD;
+      --rule: #2C3A4D;
+      --signal: #E3B23C;
+      --l1: #E9ECEE;
+      --l2: #BFCBD8;
+      --l3: #8FA3BA;
+      --l4: #637A96;
+      --l5: #43586F;
+      --focus: #E3B23C;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--signal); text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  header.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: end;
+    padding: 96px 0 72px;
+    border-bottom: 1px solid var(--rule);
+  }
+  h1 {
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    margin: 0 0 28px;
+  }
+  .lead { font-size: 22px; line-height: 1.45; max-width: 30ch; margin: 0 0 20px; }
+  .status { color: var(--ink-soft); margin: 0 0 32px; max-width: 42ch; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1.5px solid var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn:hover { border-color: var(--signal); }
+
+  /* Stack */
+  .stack-note { font-size: 15px; color: var(--ink-soft); margin: 0 0 14px; }
+  .stack { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .stack button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 16px 14px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+  }
+  .stack li:nth-child(1) button { background: var(--l1); }
+  .stack li:nth-child(2) button { background: var(--l2); width: 94%; }
+  .stack li:nth-child(3) button { background: var(--l3); width: 88%; }
+  .stack li:nth-child(4) button { background: var(--l4); width: 82%; color: var(--ink); }
+  .stack li:nth-child(5) button { background: var(--l5); width: 76%; color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    .stack li:nth-child(1) button, .stack li:nth-child(2) button { color: #101B2B; }
+    .stack li:nth-child(4) button, .stack li:nth-child(5) button { color: #E9ECEE; }
+  }
+  .stack button::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--signal);
+    transition: width .18s ease;
+  }
+  .stack button[aria-pressed="true"]::before { width: 8px; }
+  .stack button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .stack .count { font-weight: 400; opacity: .8; font-size: 14px; }
+  .stack-clear {
+    all: unset;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    visibility: hidden;
+  }
+  .stack-clear.show { visibility: visible; }
+  .stack-clear:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+  /* Sections */
+  section { padding: 72px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 40px;
+  }
+
+  /* Work */
+  .role {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 32px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    transition: opacity .2s ease;
+  }
+  .role:first-of-type { border-top: 0; padding-top: 0; }
+  .role.dim { opacity: .28; }
+  .years { color: var(--ink-soft); font-size: 16px; padding-top: 3px; }
+  .role h3 { font-size: 22px; font-weight: 700; margin: 0 0 2px; letter-spacing: -0.01em; }
+  .org { color: var(--ink-soft); margin: 0 0 12px; }
+  .role p.body { margin: 0 0 16px; max-width: 64ch; }
+  .layers { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; padding: 0; list-style: none; font-size: 14px; color: var(--ink-soft); }
+  .layers li { display: flex; align-items: center; gap: 7px; }
+  .layers li::before { content: ""; width: 18px; height: 6px; background: var(--c); }
+  [data-l="models"] { --c: var(--l1); }
+  [data-l="data"] { --c: var(--l2); }
+  [data-l="apis"] { --c: var(--l3); }
+  [data-l="identity"] { --c: var(--l4); }
+  [data-l="infra"] { --c: var(--l5); }
+
+  /* Built */
+  .built { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 56px; }
+  .built h3 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+  .built p { margin: 0 0 8px; max-width: 46ch; }
+  .built .tech { color: var(--ink-soft); font-size: 15px; }
+  .area { border-top: 6px solid var(--c); padding-top: 18px; }
+
+  /* Background */
+  .two { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 56px; }
+  .two p { margin: 0 0 16px; max-width: 58ch; }
+  dl { margin: 0; }
+  dt { font-weight: 700; margin: 0; }
+  dd { margin: 0 0 18px; color: var(--ink-soft); }
+
+  /* Contact */
+  .contact p { font-size: 22px; max-width: 34ch; margin: 0 0 28px; line-height: 1.4; }
+  .mail { font-size: clamp(22px, 4vw, 34px); font-weight: 700; letter-spacing: -0.015em; word-break: break-word; }
+  .links { margin-top: 28px; display: flex; gap: 24px; flex-wrap: wrap; }
+
+  footer { padding: 32px 0 48px; color: var(--ink-soft); font-size: 15px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width: 860px) {
+    header.hero { grid-template-columns: 1fr; gap: 48px; padding: 64px 0 56px; }
+    .role { grid-template-columns: 1fr; gap: 6px; }
+    .built, .two { grid-template-columns: 1fr; gap: 40px; }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 16px; }
+    .lead { font-size: 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1>Touseef<br>Ahmed</h1>
+      <p class="lead">I build AI systems and make them work inside real company infrastructure.</p>
+      <p class="status">Lead AI Engineer at Wion AI. Enterprise IT at Nokia in Vimercate. Completing an MSc in Artificial Intelligence at Milano Bicocca in December 2026. Based in Milan.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:info@touseefahmed.com">Email me</a>
+        <a class="btn" href="https://linkedin.com/in/ahmedtouseef">LinkedIn</a>
+        <a class="btn" href="https://github.com/touseefahmed">GitHub</a>
+      </div>
+    </div>
+
+    <div>
+      <p class="stack-note">The layers I work across. Most problems I solve sit between two of them. Pick one to see where I have done that work.</p>
+      <ul class="stack" id="stack">
+        <li><button type="button" data-layer="models" aria-pressed="false">Models and agents <span class="count"></span></button></li>
+        <li><button type="button" data-layer="data" aria-pressed="false">Retrieval and data <span class="count"></span></button></li>
+        <li><button type="button" data-layer="apis" aria-pressed="false">APIs and integrations <span class="count"></span></button></li>
+        <li><button type="button" data-layer="identity" aria-pressed="false">Identity and access <span class="count"></span></button></li>
+        <li><button type="button" data-layer="infra" aria-pressed="false">Servers and network <span class="count"></span></button></li>
+      </ul>
+      <button type="button" class="stack-clear" id="clear">Show all work</button>
+    </div>
+  </header>
+
+  <section id="work" aria-labelledby="work-h">
+    <h2 id="work-h">Work</h2>
+
+    <article class="role" data-layers="models data apis infra">
+      <div class="years">2025 to now</div>
+      <div>
+        <h3>Lead AI Engineer</h3>
+        <p class="org">Wion AI, remote</p>
+        <p class="body">I lead model selection, orchestration design and deployment for the company's AI stack. Most of the work is multi agent systems built on OpenAI and Claude models, and deciding what ships by weighing answer quality against cost and latency.</p>
+        <ul class="layers"><li data-l="models">Models and agents</li><li data-l="data">Retrieval and data</li><li data-l="apis">APIs and integrations</li><li data-l="infra">Servers and network</li></ul>
+      </div>
+    </article>
+
+    <article class="role" data-layers="models identity apis infra">
+      <div class="years">2025 to now</div>
+      <div>
+        <h3>IT Support Engineer, External OSS</h3>
+        <p class="org">Nokia, Vimercate</p>
+        <p class="body">Enterprise IT for users in Italy, France and Switzerland. I work through Active Directory and access problems, DNS, VPN and certificate faults, and API issues on Nokia's AMS platform. When a fault is systemic I escalate it to engineering with the evidence, I manage vendors such as Lenovo, Dell, HP and Palo Alto Networks, and I contribute to internal LLM and machine learning work on incident data.</p>
+        <ul class="layers"><li data-l="models">Models and agents</li><li data-l="apis">APIs and integrations</li><li data-l="identity">Identity and access</li><li data-l="infra">Servers and network</li></ul>
+      </div>
+    </article>
+
+    <article class="role" data-layers="models data infra">
+      <div class="years">2025 to 2026</div>
+      <div>
+        <h3>AI Researcher</h3>
+        <p class="org">Neurab Cognitive Recovery, Milan</p>
+        <p class="body">I built a domain specific assistant for cognitive recovery, from dataset curation to deployment. I fine tuned small open source models, grounded every answer with a FAISS retrieval pipeline, and shipped it fully offline with no dependency on cloud APIs.</p>
+        <ul class="layers"><li data-l="models">Models and agents</li><li data-l="data">Retrieval and data</li><li data-l="infra">Servers and network</li></ul>
+      </div>
+    </article>
+
+    <article class="role" data-layers="apis identity data infra">
+      <div class="years">2024 to now</div>
+      <div>
+        <h3>Independent engineer</h3>
+        <p class="org">My own practice, Milan</p>
+        <p class="body">I scope, build and run software for clients under my own Italian VAT registration. That covers AI systems, web platforms and the infrastructure they run on.</p>
+        <ul class="layers"><li data-l="data">Retrieval and data</li><li data-l="apis">APIs and integrations</li><li data-l="identity">Identity and access</li><li data-l="infra">Servers and network</li></ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <h2 id="skills-h">What I work on</h2>
+    <div class="built">
+      <div data-l="models" class="area">
+        <h3>Models and agents</h3>
+        <p>Choosing and fine tuning language models, designing multi agent workflows, prompt design, and evaluating output quality against cost and latency before anything ships.</p>
+        <p class="tech">OpenAI and Claude APIs, Hugging Face Transformers, MCP, Python</p>
+      </div>
+      <div data-l="data" class="area">
+        <h3>Retrieval and data</h3>
+        <p>Retrieval augmented generation, embeddings and vector search, dataset curation, and the relational databases that sit underneath production systems.</p>
+        <p class="tech">FAISS, Sentence Transformers, PostgreSQL, MariaDB, SQL</p>
+      </div>
+      <div data-l="apis" class="area">
+        <h3>APIs and integrations</h3>
+        <p>Backend services and the integrations that connect AI to existing company systems, from modern REST and realtime APIs to older SOAP interfaces.</p>
+        <p class="tech">FastAPI, REST, SOAP, WebSocket, React</p>
+      </div>
+      <div data-l="identity" class="area">
+        <h3>Identity and access</h3>
+        <p>Directory services, role based access control, token authentication and certificates, so systems are secure and the right people see the right data.</p>
+        <p class="tech">Active Directory, RBAC, JWT, OAuth and SAML, TLS</p>
+      </div>
+      <div data-l="infra" class="area">
+        <h3>Servers and network</h3>
+        <p>Linux servers I deploy and harden myself, CI/CD on GitHub, and enterprise networking, including a running <a href="https://cicd.touseefahmed.com">EVPN fabric lab</a>.</p>
+        <p class="tech">Linux, Nginx, systemd, firewalls, DNS, VPN, Git</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="background" aria-labelledby="bg-h">
+    <h2 id="bg-h">Background</h2>
+    <div class="two">
+      <div>
+        <p>I started in mechanical engineering and moved into AI and software. The engineering training still shapes how I work: understand the whole system, find the constraint, then fix that.</p>
+        <p>I am completing an MSc in Artificial Intelligence for Science and Technology at Università degli Studi di Milano Bicocca, and I hold mechanical engineering degrees from Anhui University of Science and Technology and Yunnan Technology and Business University.</p>
+      </div>
+      <dl>
+        <dt>Languages I speak</dt>
+        <dd>English fluently, Urdu and Punjabi natively, Italian and Chinese at B2.</dd>
+        <dt>Languages I write</dt>
+        <dd>Python, C++, SQL, Bash and PowerShell.</dd>
+        <dt>Open to</dt>
+        <dd>AI engineering roles in Milan, remote, or with relocation.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Contact</h2>
+    <p>If you are hiring, or you have a system that needs AI working inside it, email is the quickest way to reach me.</p>
+    <a class="mail" href="mailto:info@touseefahmed.com">info@touseefahmed.com</a>
+    <div class="links">
+      <a href="https://linkedin.com/in/ahmedtouseef">LinkedIn</a>
+      <a href="https://github.com/touseefahmed">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Touseef Ahmed, Milan</span>
+    <span>www.touseefahmed.com</span>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('#stack button'));
+    var roles = Array.prototype.slice.call(document.querySelectorAll('.role'));
+    var clear = document.getElementById('clear');
+
+    buttons.forEach(function (b) {
+      var n = roles.filter(function (r) { return r.dataset.layers.split(' ').indexOf(b.dataset.layer) > -1; }).length;
+      b.querySelector('.count').textContent = n + (n === 1 ? ' role' : ' roles');
+    });
+
+    function apply(layer) {
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.layer === layer)); });
+      roles.forEach(function (r) {
+        var on = !layer || r.dataset.layers.split(' ').indexOf(layer) > -1;
+        r.classList.toggle('dim', !on);
+      });
+      clear.classList.toggle('show', !!layer);
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var active = b.getAttribute('aria-pressed') === 'true';
+        apply(active ? null : b.dataset.layer);
+        if (!active && window.innerWidth < 860) {
+          document.getElementById('work').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        }
+      });
+    });
+    clear.addEventListener('click', function () { apply(null); });
+  })();
+</script>
+</body>
+</html>
